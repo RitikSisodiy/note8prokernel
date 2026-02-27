@@ -133,10 +133,8 @@ static inline int typec_enable_low_power_mode(
 
 static inline int typec_enable_vconn(struct tcpc_device *tcpc_dev)
 {
-#ifndef CONFIG_USB_POWER_DELIVERY
 	if (!typec_is_sink_with_emark())
 		return 0;
-#endif /* CONFIG_TCPC_VCONN_SUPPLY_MODE */
 
 #ifdef CONFIG_TCPC_VCONN_SUPPLY_MODE
 	if (tcpc_dev->tcpc_vconn_supply == TCPC_VCONN_SUPPLY_NEVER)
